@@ -1,0 +1,114 @@
+.container {
+   max-width: 1180px;
+   margin: 0 auto;
+   padding: 0 15px;
+   height: 100%;
+}
+
+.header {
+   position: relative;
+   z-index: 3;
+   height: 130px;
+   background-color: #1E202B;
+   color: #fff;
+}
+
+.header__content {
+   display: flex;
+   justify-content: space-between;
+   height: 100%;
+   align-items: center;
+}
+
+.header__logo {
+   display: flex;
+   align-items: center;
+}
+
+.header__logo-img {
+   width: 64px;
+   height: 64px;
+   margin-right: 15px;
+   background: url('../../img/logoWeather.png')center / contain no-repeat;
+}
+
+.header__logo-name h1{
+   font-size: 18px;
+   font-weight: 700;
+   margin-bottom: 5px;
+   white-space: nowrap;
+}
+
+.header__logo-subname h2{
+   font-size: 12px;
+   font-weight: 300;
+   white-space: nowrap;
+}
+
+.header__list {
+   display: flex;
+   align-items: center;
+}
+
+.header__list li {
+   margin-left: 60px;
+}
+
+.header__list a {
+   padding: 5px 25px;
+   border-radius: 15px;
+   color: #fff;
+   text-decoration: none;
+   font-size: 14px;
+}
+
+.header__list a:hover {
+   border: 2px solid #009AD8;
+   padding: 5px 23px;
+   color: #009AD8;
+}
+
+.header__burger {
+   display: none;
+   margin-top: 10px;
+}
+
+.burger__deactive {
+   width: 40px;
+   height: 40px;
+   background: url('../../img/menudeactive.png') center / contain no-repeat;
+}
+
+.burger__active {
+   width: 40px;
+   height: 40px;
+   background: url('../../img/menuactive.png') center / contain no-repeat;
+}
+
+.menu{
+   background-color: #1E202B;
+   position: relative;
+   transition: all 0.6s;
+   display: none;
+}
+
+.menu.mdeact {
+   transform: translate(0px, -300px);
+}
+
+.menu.act {
+   transform: translate(0px, 0px);
+}
+
+.menu__link {
+   text-align: center;
+   padding: 20px 0px;
+}
+
+.menu__link a {
+   font-size: 18px;
+   color: #fff;
+   text-decoration: none;
+}
+
+
