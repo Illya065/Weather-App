@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import HeaderList from "./HeaderList/HeaderList";
 
 const Header = (props) => {
   let [isActive, setStatus] = useState(false);
@@ -25,20 +26,7 @@ const Header = (props) => {
               </div>
             </div>
 
-            <ul className="header__list">
-              <li className="header__link">
-                <a href="#">Home</a>
-              </li>
-              <li className="header__link">
-                <a href="#">News</a>
-              </li>
-              <li className="header__link">
-                <a href="#">Photos</a>
-              </li>
-              <li className="header__link">
-                <a href="#">Contact</a>
-              </li>
-            </ul>
+            <HeaderList />
 
             <div onClick={toggleMenu} className="header__burger">
               <div

@@ -89,6 +89,7 @@ body {
 }
 
 @import './_components/Header/Header.css';
+@import './_components/Main/Main.css';
 
 
 
@@ -117,5 +118,9 @@ body {
 
    .menu {
       display: block;
+   }
+
+   .menu.mdeact {
+      display: none;
    }
 }
