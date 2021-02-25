@@ -1,0 +1,146 @@
+.main {
+   
+}
+
+.bg__city {
+   height: 350px;
+   /* background: url('../../img/newbg.jpg') 0 0 / cover no-repeat; */
+   background-color: grey;
+}
+
+.bg__darkblue {
+   height: 600px;
+   background-color: #1E202B;
+}
+
+.search {
+   position: relative;
+   margin-top: -870px;
+   margin-bottom: 100px;
+}
+
+.search__form {
+   height: 60px;
+   background-color: #1E202B;
+   border-radius: 25px;
+   display: flex;
+   align-items: center;
+   overflow: hidden;
+}
+
+.search__input {
+   height: 100%;
+   width: fill;
+   background-color: transparent;
+   padding: 0px 25px;
+   margin: 0;
+   border: 0;
+   border: none;
+   color: rgb(158, 158, 158);
+   font-size: 18px;
+   font-weight: 300;
+}
+
+.search__button {
+   background-color: #009AD8;
+   color: #fff;
+   font-size: 18px;
+   padding: 12px 40px;
+   border-radius: 25px;
+   margin: 0px 3px 0px 10px;
+   border: none;
+   cursor: pointer;
+}
+
+.weather {
+
+}
+
+.weather__days {
+   display: grid;
+   grid-template-columns: 3fr repeat(6, 1fr);
+   grid-template-rows: 250px;
+}
+
+.main__item-date {
+   color: #BFC1C8;
+   background-color: rgb(45, 48, 61);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   font-size: 14px;
+   border-radius: 15px 0 0 0;
+   padding: 5px 15px;
+}
+
+.card__body {
+   border-radius: 0px 0px 0px 15px;
+   padding: 30px 20px;
+   background-color: rgb(50, 53, 68);
+   height: 220px;
+}
+
+.card__city {
+   color: #BFC1C8;
+   font-size: 18px;
+}
+
+.card__weather {
+   display: flex;
+}
+
+.card__temp {
+   font-size: 90px;
+   font-weight: 700;
+   color: #fff;
+}
+
+.weather__item {
+}
+
+.weather__item-day {
+   text-align: center;
+   font-size: 14px;
+   padding: 5px;
+   color: #BFC1C8;
+   background-color: rgb(45, 48, 61);
+}
+
+.bg>.weather__item-day {
+   background-color: rgb(34, 37, 48);
+}
+
+.last>.weather__item-day {
+   border-radius: 0px 15px 0px 0px;
+}
+
+.last>.weather__item-body {
+   border-radius: 0px 0px 15px 0px;
+}
+
+.weather__item-body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 220px;
+   background-color: rgb(50, 53, 68);
+}
+
+.weather__item-img {
+   width: 40px;
+   height: 40px;
+   margin-bottom: 40px;
+   border: 1px solid #000;
+}
+
+.weather__item-temp {
+   font-size: 24px;
+   font-weight: 700;
+   text-align: center;
+   color: #fff;
+}
+
+.bg>.weather__item-body {
+   background-color: rgb(38, 41, 54);
+}
