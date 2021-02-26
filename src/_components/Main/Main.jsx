@@ -1,7 +1,10 @@
+import axios from "axios";
 import React from "react";
 import "./Main.css";
 
 const Main = (props) => {
+  props.currentWeatherThunk("London");
+
   return (
     <main className="main">
       <div className="bg__city"> </div>
@@ -25,7 +28,7 @@ const Main = (props) => {
                   <div className="card__body">
                     <div className="card__city">New-York</div>
                     <div className="card__weather">
-                      <div className="card__temp">23°C</div>
+                      <div className="card__temp">{props.currentWeather}</div>
                       <div className="card__img"></div>
                     </div>
                   </div>
