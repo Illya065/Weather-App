@@ -11,6 +11,10 @@ const mapStateToProps = (state) => {
     description: state.weatherPage.currentWeather.weather[0].main,
     currentTemp: state.weatherPage.currentWeather.main.temp,
     weatherState: state.weatherPage.weatherState,
+    currentTime: state.weatherPage.currentTime,
+    days: state.weatherPage.days,
+    month: state.weatherPage.month,
+    arr: state.weatherPage.arr,
   };
 };
 

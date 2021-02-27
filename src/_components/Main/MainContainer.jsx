@@ -1,7 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import Main from "./Main";
-import { setCity, currentWeatherThunk } from "../../_redux/weatherReducer";
+import {
+  setCity,
+  currentWeatherThunk,
+  forecastThunk,
+} from "../../_redux/weatherReducer";
 
 const mapStateToProps = (state) => {
   return {
@@ -12,6 +16,7 @@ const mapStateToProps = (state) => {
 const MainContainer = connect(mapStateToProps, {
   setCity,
   currentWeatherThunk,
+  forecastThunk,
 })(Main);
 
 export default MainContainer;

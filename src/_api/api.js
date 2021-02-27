@@ -4,4 +4,10 @@ export const weatherAPI = {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=508abd8e606423c4a10bd147772a9bd0&units=metric`
     ).then((response) => response.json());
   },
+
+  getForecast(city) {
+    return fetch(
+      `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=508abd8e606423c4a10bd147772a9bd0&units=metric`
+    ).then((response) => response.json());
+  },
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Main.css";
 import AddCityFormRedux from "./SearchForm/SearchForm";
-import WeatherList from "./WeatherList/WeatherList";
 import WeatherListContainer from "./WeatherList/WeatherListContainer";
 
 const Main = (props) => {
@@ -9,6 +8,7 @@ const Main = (props) => {
     props.setCity(value.city);
   };
   props.currentWeatherThunk(props.city);
+  props.forecastThunk(props.city);
 
   return (
     <main className="main">

@@ -5,12 +5,10 @@
    align-items: center;
    justify-content: space-between;
    font-size: 14px;
-   border-radius: 15px 0 0 0;
    padding: 5px 15px;
 }
 
 .card__body {
-   border-radius: 0px 0px 0px 15px;
    padding: 30px 20px;
    background-color: rgb(50, 53, 68);
    height: 250px;
@@ -18,17 +16,24 @@
 
 .card__city {
    color: #BFC1C8;
-   font-size: 18px;
+   font-size: 20px;
 }
 
 .card__weather {
    display: flex;
+   align-items: center;
 }
 
 .card__temp {
    font-size: 90px;
    font-weight: 700;
    color: #fff;
+   margin-right: 40px;
+}
+
+.card__img img {
+   width: 100px;
+   height: 100px;
 }
 
 .details {
@@ -46,7 +51,7 @@
 .humidity__img {
    width: 21px;
    height: 21px;
-   background: url('../../../../img/humidity.png') center / contain;
+   background: url('../../../../img/humidity.png') center / contain no-repeat;
    margin-right: 10px;
 }
 
@@ -54,12 +59,12 @@
    margin-right: 10px;
    width: 21px;
    height: 21px;
-   background: url('../../../../img/wind.png') center / contain;
+   background: url('../../../../img/wind.png') center / contain no-repeat;
 }
 
 .preassure__img {
    margin-right: 10px;
    width: 21px;
    height: 21px;
-   background: url('../../../../img/gauge.png') center / contain;
+   background: url('../../../../img/gauge.png') center / contain no-repeat;
 }
