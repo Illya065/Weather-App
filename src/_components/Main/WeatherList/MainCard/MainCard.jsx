@@ -1,5 +1,6 @@
 import React from "react";
 import "./MainCard.css";
+import scattered from "../../../../img/scattered.png";
 
 const MainCard = (props) => {
   return (
@@ -15,7 +16,10 @@ const MainCard = (props) => {
             <div className="card__temp">
               {`${Math.round(props.currentTemp)}°C`}
             </div>
-            <div className="card__img"></div>
+            <div className="card__img">
+              {props.description}
+              <img src={scattered} />
+            </div>
           </div>
           <div className="details">
             <div className="details__humidity det">

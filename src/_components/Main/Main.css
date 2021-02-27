@@ -9,13 +9,13 @@
 }
 
 .bg__darkblue {
-   height: 600px;
+   min-height: 900px;
    background-color: #1E202B;
 }
 
 .search {
    position: relative;
-   margin-top: -870px;
+   margin-top: -1170px;
    margin-bottom: 100px;
 }
 

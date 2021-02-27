@@ -136,4 +136,38 @@ body {
    .menu.mdeact {
       display: none;
    }
+
+   .search {
+      margin-bottom: 70px;
+      margin-top: -1190px;
+   }
+}
+
+@media(max-width: 550px) {
+   .weather__days {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 250px 250px 250px;
+      row-gap: 25px;
+   }
+
+   .weather__main-item {
+      grid-column: 1 / 4;
+   }
+}
+
+@media(max-width: 420px) {
+   .search__button {
+      padding: 12px 20px;
+   }
+}
+
+@media(max-width: 370px) {
+   .search__form {
+      display: flex;
+      justify-content: space-between;
+   }
+   .search__input {
+      width: 100%;
+   }
 }
