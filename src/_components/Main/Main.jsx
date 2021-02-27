@@ -1,9 +1,13 @@
-import axios from "axios";
 import React from "react";
 import "./Main.css";
+import AddCityFormRedux from "./SearchForm/SearchForm";
+import WeatherList from "./WeatherList/WeatherList";
 
 const Main = (props) => {
-  props.currentWeatherThunk("London");
+  const addCity = (value) => {
+    props.setCity(value.city);
+  };
+  props.currentWeatherThunk(props.city);
 
   return (
     <main className="main">
@@ -12,76 +16,17 @@ const Main = (props) => {
       <div className="container">
         <div className="main__content">
           <section className="search">
-            <form className="search__form">
-              <input type="text" className="search__input" />
-              <button className="search__button">Find</button>
-            </form>
+            <AddCityFormRedux onSubmit={addCity} />
           </section>
+
           <section className="weather">
-            <div className="weather__days">
-              <div className="weather__item weather__main-item">
-                <div className="main__item-date">
-                  <div className="main__item-day">Monday</div>
-                  <div className="main__item-year">6 Oct</div>
-                </div>
-                <div className="main__item-card">
-                  <div className="card__body">
-                    <div className="card__city">New-York</div>
-                    <div className="card__weather">
-                      <div className="card__temp">{props.currentWeather}</div>
-                      <div className="card__img"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="weather__item bg">
-                <div className="weather__item-day">Tuesday</div>
-                <div className="weather__item-body">
-                  <div className="weather__item-img"></div>
-                  <div className="weather__item-temp">23°C</div>
-                </div>
-              </div>
-
-              <div className="weather__item">
-                <div className="weather__item-day">Tuesday</div>
-                <div className="weather__item-body">
-                  <div className="weather__item-img"></div>
-                  <div className="weather__item-temp">23°C</div>
-                </div>
-              </div>
-
-              <div className="weather__item bg">
-                <div className="weather__item-day">Tuesday</div>
-                <div className="weather__item-body">
-                  <div className="weather__item-img"></div>
-                  <div className="weather__item-temp">23°C</div>
-                </div>
-              </div>
-
-              <div className="weather__item">
-                <div className="weather__item-day">Tuesday</div>
-                <div className="weather__item-body">
-                  <div className="weather__item-img"></div>
-                  <div className="weather__item-temp">23°C</div>
-                </div>
-              </div>
-
-              <div className="weather__item bg">
-                <div className="weather__item-day">Tuesday</div>
-                <div className="weather__item-body">
-                  <div className="weather__item-img"></div>
-                  <div className="weather__item-temp">23°C</div>
-                </div>
-              </div>
-
-              <div className="weather__item last">
-                <div className="weather__item-day">Tuesday</div>
-                <div className="weather__item-body">
-                  <div className="weather__item-img"></div>
-                  <div className="weather__item-temp">23°C</div>
-                </div>
-              </div>
-            </div>
+            <WeatherList
+              humidity={props.humidity}
+              wind={props.wind}
+              pressure={props.pressure}
+              currentTemp={props.currentTemp}
+              cityName={props.cityName}
+            />
           </section>
         </div>
       </div>

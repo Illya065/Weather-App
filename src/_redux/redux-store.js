@@ -5,6 +5,7 @@ import weatherReducer from "./weatherReducer";
 
 let reducers = combineReducers({
   weatherPage: weatherReducer,
+  form: formReducer,
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));

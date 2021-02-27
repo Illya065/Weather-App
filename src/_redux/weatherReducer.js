@@ -1,20 +1,36 @@
 import { weatherAPI } from "../_api/api";
 
 const ADD_CURRENT_TEMP = "ADD_CURRENT_TEMP";
+const SET_CITY = "SET_CITY";
 
 let initialState = {
-  currentWeather: 10,
+  currentWeather: {
+    main: {
+      temp: "0",
+      humidity: 0,
+      pressure: 0,
+    },
+    wind: {
+      speed: 0,
+    },
+    name: "Odessa",
+  },
+  city: "Odessa",
 };
 
 const weatherReducer = (state = initialState, action) => {
-  let stateCopy = JSON.parse(JSON.stringify(state));
-
   switch (action.type) {
     case ADD_CURRENT_TEMP:
+      return {
+        ...state,
+        currentWeather: action.weather,
+      };
+
+    case SET_CITY:
       debugger;
       return {
         ...state,
-        currentWeather: action.weather.main.temp,
+        city: action.city,
       };
 
     default:
@@ -29,16 +45,22 @@ export const setCurrentWeather = (weather) => {
   };
 };
 
+export const setCity = (city) => {
+  return {
+    type: SET_CITY,
+    city,
+  };
+};
+
 export const currentWeatherThunk = (city) => (dispatch) => {
-  debugger;
-  fetch(
-    `api.openweathermap.org/data/2.5/weather?q=${city}&appid=508abd8e606423c4a10bd147772a9bd0`
-  )
-    .then((response) => response.json())
+  weatherAPI
+    .getCurrentWeather(city)
     .then((data) => {
       dispatch(setCurrentWeather(data));
     })
-    .catch((err) => alert("asda"));
+    .catch((err) => {
+      return alert(err);
+    });
 };
 
 export default weatherReducer;
