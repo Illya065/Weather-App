@@ -97,7 +97,7 @@ body {
    .weather__days {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: 250px 250px;
+      grid-template-rows: 250px 280px;
       row-gap: 25px;
    }
 
@@ -147,7 +147,7 @@ body {
    .weather__days {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 250px 250px 250px;
+      grid-template-rows: 250px 250px 280px;
       row-gap: 25px;
    }
 
