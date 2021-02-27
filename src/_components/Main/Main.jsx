@@ -2,6 +2,7 @@ import React from "react";
 import "./Main.css";
 import AddCityFormRedux from "./SearchForm/SearchForm";
 import WeatherList from "./WeatherList/WeatherList";
+import WeatherListContainer from "./WeatherList/WeatherListContainer";
 
 const Main = (props) => {
   const addCity = (value) => {
@@ -20,13 +21,7 @@ const Main = (props) => {
           </section>
 
           <section className="weather">
-            <WeatherList
-              humidity={props.humidity}
-              wind={props.wind}
-              pressure={props.pressure}
-              currentTemp={props.currentTemp}
-              cityName={props.cityName}
-            />
+            <WeatherListContainer />
           </section>
         </div>
       </div>

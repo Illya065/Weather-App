@@ -2,20 +2,27 @@ import { weatherAPI } from "../_api/api";
 
 const ADD_CURRENT_TEMP = "ADD_CURRENT_TEMP";
 const SET_CITY = "SET_CITY";
+const SET_IMG = "SET_IMG";
 
 let initialState = {
   currentWeather: {
     main: {
-      temp: "0",
-      humidity: 0,
-      pressure: 0,
+      temp: null,
+      humidity: null,
+      pressure: null,
     },
     wind: {
-      speed: 0,
+      speed: null,
     },
     name: "Odessa",
+    weather: [
+      {
+        description: null,
+      },
+    ],
   },
   city: "Odessa",
+  weatherState: null,
 };
 
 const weatherReducer = (state = initialState, action) => {
@@ -27,10 +34,16 @@ const weatherReducer = (state = initialState, action) => {
       };
 
     case SET_CITY:
-      debugger;
       return {
         ...state,
         city: action.city,
+      };
+
+    case SET_IMG:
+      debugger;
+      return {
+        ...state,
+        weatherState: action.code,
       };
 
     default:
@@ -49,6 +62,13 @@ export const setCity = (city) => {
   return {
     type: SET_CITY,
     city,
+  };
+};
+
+export const setImg = (code) => {
+  return {
+    type: SET_IMG,
+    code,
   };
 };
 
