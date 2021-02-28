@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "../../_common/Loader/Loader";
 import Card from "./Cards/Card";
 import MainCardContainer from "./MainCard/MainCardContainer";
 
@@ -17,6 +18,7 @@ const WeatherList = (props) => {
   ));
   return (
     <div className="weather__days">
+      {/* {props.isFetching ? <Loader /> : null} */}
       <MainCardContainer />
       {weatherDays}
     </div>

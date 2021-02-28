@@ -4,6 +4,7 @@ const ADD_CURRENT_TEMP = "ADD_CURRENT_TEMP";
 const SET_CITY = "SET_CITY";
 const SET_IMG = "SET_IMG";
 const ADD_FORECAST = "ADD_FORECAST";
+const SET_IS_FETCHING = "SET_IS_FETCHING";
 
 let initialState = {
   currentWeather: {
@@ -335,6 +336,7 @@ let initialState = {
       id: 6,
     },
   ],
+  isFetching: false,
 };
 
 const weatherReducer = (state = initialState, action) => {
@@ -359,10 +361,15 @@ const weatherReducer = (state = initialState, action) => {
       };
 
     case ADD_FORECAST:
-      debugger;
       return {
         ...state,
         forecast: action.forecast.cod == 404 ? state.forecast : action.forecast,
+      };
+
+    case SET_IS_FETCHING:
+      return {
+        ...state,
+        isFetching: action.condition,
       };
 
     default:
@@ -398,30 +405,48 @@ export const setImg = (code) => {
   };
 };
 
+export const setIsFetching = (condition) => {
+  return {
+    type: SET_IS_FETCHING,
+    condition,
+  };
+};
+
 export const currentWeatherThunk = (city) => (dispatch) => {
+  if (!city) {
+    return "error";
+  }
+  dispatch(setIsFetching(true));
   weatherAPI
     .getCurrentWeather(city)
     .then((data) => {
       if (!data) {
         return "error";
       }
+      dispatch(setIsFetching(false));
       dispatch(setCurrentWeather(data));
     })
     .catch((err) => {
-      return alert("current");
+      alert(`cdasdasdent${err}`);
     });
 };
 
 export const forecastThunk = (city) => (dispatch) => {
+  if (!city) {
+    return "error";
+  }
   weatherAPI
     .getForecast(city)
     .then((data) => {
+      debugger;
       if (!data) {
         return "error";
       }
       dispatch(setForecast(data));
     })
-    .catch((err) => {});
+    .catch((err) => {
+      return alert(`fosssssst${err}`);
+    });
 };
 
 export default weatherReducer;

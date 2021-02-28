@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import WeatherList from "./WeatherList";
-import { forecastThunk } from "../../../_redux/weatherReducer";
 
 const mapStateToProps = (state) => {
   return {
@@ -11,11 +10,10 @@ const mapStateToProps = (state) => {
     currentTime: state.weatherPage.currentTime,
     days: state.weatherPage.days,
     month: state.weatherPage.month,
+    isFetching: state.weatherPage.isFetching,
   };
 };
 
-const WeatherListContainer = connect(mapStateToProps, { forecastThunk })(
-  WeatherList
-);
+const WeatherListContainer = connect(mapStateToProps, {})(WeatherList);
 
 export default WeatherListContainer;

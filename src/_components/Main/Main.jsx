@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "../_common/Loader/Loader";
 import "./Main.css";
 import AddCityFormRedux from "./SearchForm/SearchForm";
 import WeatherListContainer from "./WeatherList/WeatherListContainer";
@@ -19,7 +20,7 @@ const Main = (props) => {
           <section className="search">
             <AddCityFormRedux onSubmit={addCity} />
           </section>
-
+          {/* {props.isFetching ? <Loader /> : null} */}
           <section className="weather">
             <WeatherListContainer />
           </section>
