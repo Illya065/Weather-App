@@ -307,26 +307,32 @@ let initialState = {
     {
       bg: true,
       num: 6,
+      id: 1,
     },
     {
       bg: false,
       num: 13,
+      id: 2,
     },
     {
       bg: true,
       num: 19,
+      id: 3,
     },
     {
       bg: false,
       num: 26,
+      id: 4,
     },
     {
       bg: true,
       num: 32,
+      id: 5,
     },
     {
       bg: false,
       num: 39,
+      id: 6,
     },
   ],
 };
@@ -336,7 +342,8 @@ const weatherReducer = (state = initialState, action) => {
     case ADD_CURRENT_TEMP:
       return {
         ...state,
-        currentWeather: action.weather,
+        currentWeather:
+          action.weather.cod == 404 ? state.currentWeather : action.weather,
       };
 
     case SET_CITY:
@@ -355,7 +362,7 @@ const weatherReducer = (state = initialState, action) => {
       debugger;
       return {
         ...state,
-        forecast: action.forecast,
+        forecast: action.forecast.cod == 404 ? state.forecast : action.forecast,
       };
 
     default:
@@ -395,10 +402,13 @@ export const currentWeatherThunk = (city) => (dispatch) => {
   weatherAPI
     .getCurrentWeather(city)
     .then((data) => {
+      if (!data) {
+        return "error";
+      }
       dispatch(setCurrentWeather(data));
     })
     .catch((err) => {
-      return alert("curenn");
+      return alert("current");
     });
 };
 
@@ -406,11 +416,12 @@ export const forecastThunk = (city) => (dispatch) => {
   weatherAPI
     .getForecast(city)
     .then((data) => {
+      if (!data) {
+        return "error";
+      }
       dispatch(setForecast(data));
     })
-    .catch((err) => {
-      return alert("forecast");
-    });
+    .catch((err) => {});
 };
 
 export default weatherReducer;
