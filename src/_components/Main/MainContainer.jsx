@@ -5,6 +5,7 @@ import {
   setCity,
   currentWeatherThunk,
   forecastThunk,
+  setIsFetching,
 } from "../../_redux/weatherReducer";
 
 const mapStateToProps = (state) => {
