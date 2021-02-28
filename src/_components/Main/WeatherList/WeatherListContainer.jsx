@@ -8,6 +8,9 @@ const mapStateToProps = (state) => {
     forecastDays: state.weatherPage.forecastDays,
     city: state.weatherPage.city,
     arr: state.weatherPage.arr,
+    currentTime: state.weatherPage.currentTime,
+    days: state.weatherPage.days,
+    month: state.weatherPage.month,
   };
 };
 
