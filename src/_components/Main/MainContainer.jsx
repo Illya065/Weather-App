@@ -1,11 +1,9 @@
-import React from "react";
 import { connect } from "react-redux";
 import Main from "./Main";
 import {
   setCity,
   currentWeatherThunk,
   forecastThunk,
-  setIsFetching,
 } from "../../_redux/weatherReducer";
 
 const mapStateToProps = (state) => {
