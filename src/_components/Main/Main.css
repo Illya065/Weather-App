@@ -30,7 +30,7 @@
 
 .search__input {
    height: 100%;
-   width: fill;
+   width: 100%;
    background-color: transparent;
    padding: 0px 25px;
    margin: 0;

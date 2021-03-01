@@ -1,5 +1,4 @@
 import React from "react";
-import Loader from "../_common/Loader/Loader";
 import "./Main.css";
 import AddCityFormRedux from "./SearchForm/SearchForm";
 import WeatherListContainer from "./WeatherList/WeatherListContainer";

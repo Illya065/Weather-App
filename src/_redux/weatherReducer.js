@@ -19,7 +19,7 @@ let initialState = {
     name: null,
     weather: [
       {
-        description: null,
+        main: null,
       },
     ],
   },
@@ -427,7 +427,7 @@ export const currentWeatherThunk = (city) => (dispatch) => {
       dispatch(setCurrentWeather(data));
     })
     .catch((err) => {
-      alert(`cdasdasdent${err}`);
+      console.log(`currentWeatherError: ${err}`);
     });
 };
 
@@ -438,14 +438,13 @@ export const forecastThunk = (city) => (dispatch) => {
   weatherAPI
     .getForecast(city)
     .then((data) => {
-      debugger;
       if (!data) {
         return "error";
       }
       dispatch(setForecast(data));
     })
     .catch((err) => {
-      return alert(`fosssssst${err}`);
+      return console.log(`forecastError: ${err}`);
     });
 };
 

@@ -20,73 +20,10 @@
    align-items: center;
 }
 
-.header__logo {
-   display: flex;
-   align-items: center;
-}
-
-.header__logo-img {
-   width: 64px;
-   height: 64px;
-   margin-right: 15px;
-   background: url('../../img/logoWeather.png')center / contain no-repeat;
-}
-
-.header__logo-name h1{
-   font-size: 18px;
-   font-weight: 700;
-   margin-bottom: 5px;
-   white-space: nowrap;
-}
-
-.header__logo-subname h2{
-   font-size: 12px;
-   font-weight: 300;
-   white-space: nowrap;
-}
-
 @import './HeaderList/HeaderList.css';
 
-.header__burger {
-   display: none;
-   margin-top: 10px;
-}
+@import './Burger/Burger.css';
 
-.burger__deactive {
-   width: 40px;
-   height: 40px;
-   background: url('../../img/menudeactive.png') center / contain no-repeat;
-}
-
-.burger__active {
-   width: 40px;
-   height: 40px;
-   background: url('../../img/menuactive.png') center / contain no-repeat;
-}
-
-.menu{
-   background-color: #1E202B;
-   transition: all 0.6s;
-   display: none;
-}
-
-.menu.mdeact {
-   transform: translate(0px, -300px);
-}
-
-.menu.act {
-   transform: translate(0px, 0px);
-}
-
-.menu__link {
-   text-align: center;
-   padding: 20px 0px;
-}
-
-.menu__link a {
-   font-size: 18px;
-   color: #fff;
-   text-decoration: none;
-}
+@import './BurgerLinks/BurgerLinks.css'
 
 

@@ -1,0 +1,24 @@
+.header__logo {
+   display: flex;
+   align-items: center;
+}
+
+.header__logo-img {
+   width: 64px;
+   height: 64px;
+   margin-right: 15px;
+   background: url('../../../img/logoWeather.png')center / contain no-repeat;
+}
+
+.header__logo-name h1{
+   font-size: 18px;
+   font-weight: 700;
+   margin-bottom: 5px;
+   white-space: nowrap;
+}
+
+.header__logo-subname h2{
+   font-size: 12px;
+   font-weight: 300;
+   white-space: nowrap;
+}

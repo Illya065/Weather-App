@@ -5,16 +5,16 @@ const HeaderList = (props) => {
   return (
     <ul className="header__list">
       <li className="header__link">
-        <a href="#">Home</a>
+        <a href="/home">Home</a>
       </li>
       <li className="header__link">
-        <a href="#">News</a>
+        <a href="/news">News</a>
       </li>
       <li className="header__link">
-        <a href="#">Photos</a>
+        <a href="/photos">Photos</a>
       </li>
       <li className="header__link">
-        <a href="#">Contact</a>
+        <a href="/contact">Contact</a>
       </li>
     </ul>
   );

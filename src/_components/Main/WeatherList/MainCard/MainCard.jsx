@@ -1,12 +1,7 @@
 import React from "react";
+import WeatherImages from "../../../_common/WeatherImages/WeatherImages";
 import "./MainCard.css";
-import clouds from "../../../../img/scattered.png";
-import clear from "../../../../img/clear.png";
-import snow from "../../../../img/snow.png";
-import rain from "../../../../img/rain.png";
-import mist from "../../../../img/mist.png";
-import thunderstorm from "../../../../img/thunderstorm.png";
-import shower from "../../../../img/shower.png";
+import MainCardDay from "./MainCardDay/MainCardDay";
 
 const MainCard = (props) => {
   let day = props.days.filter((i) => {
@@ -19,10 +14,11 @@ const MainCard = (props) => {
 
   return (
     <div className="weather__item weather__main-item">
-      <div className="main__item-date">
-        <div className="main__item-day">{day}</div>
-        <div className="main__item-year">{`${props.currentTime.getMonth()} ${monthcur}`}</div>
-      </div>
+      <MainCardDay
+        day={day}
+        monthcur={monthcur}
+        currentTime={props.currentTime}
+      />
       <div className="main__item-card">
         <div className="card__body">
           <div className="card__city">{props.cityName}</div>
@@ -30,25 +26,11 @@ const MainCard = (props) => {
             <div className="card__temp">
               {`${Math.round(props.currentTemp)}°C`}
             </div>
-            <div className="card__img">
-              {props.description === "Clouds" ? (
-                <img src={clouds} />
-              ) : props.description === "Snow" ? (
-                <img src={snow} />
-              ) : props.description === "Clear" ? (
-                <img src={clear} />
-              ) : props.description === "Rain" ? (
-                <img src={shower} />
-              ) : props.arr.includes(props.description) ? (
-                <img src={mist} />
-              ) : props.description === "Thunderstorm" ? (
-                <img src={thunderstorm} />
-              ) : props.description === "Drizzle" ? (
-                <img src={rain} />
-              ) : (
-                <div>none</div>
-              )}
-            </div>
+            <WeatherImages
+              origin={props.description}
+              class="card__img"
+              arr={props.arr}
+            />
           </div>
           <div className="details">
             <div className="details__humidity det">
