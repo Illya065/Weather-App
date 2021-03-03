@@ -19,38 +19,8 @@
    margin-bottom: 100px;
 }
 
-.search__form {
-   height: 60px;
-   background-color: #1E202B;
-   border-radius: 25px;
-   display: flex;
-   align-items: center;
-   overflow: hidden;
-}
-
-.search__input {
-   height: 100%;
-   width: 100%;
-   background-color: transparent;
-   padding: 0px 25px;
-   margin: 0;
-   border: 0;
-   border: none;
-   color: rgb(158, 158, 158);
-   font-size: 18px;
-   font-weight: 300;
-}
-
-.search__button {
-   background-color: #009AD8;
-   color: #fff;
-   font-size: 18px;
-   padding: 12px 40px;
-   border-radius: 25px;
-   margin: 0px 3px 0px 10px;
-   border: none;
-   cursor: pointer;
-}
+@import './SearchForm/SearchForm.css';
+@import './WeatherList/MainCard/MainCard.css';
 
 .weather {
 

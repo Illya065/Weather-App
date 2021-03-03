@@ -4,10 +4,25 @@
 }
 
 .header__logo-img {
+   transform: rotate3d(1, 1, 1, 0deg);
    width: 64px;
    height: 64px;
    margin-right: 15px;
    background: url('../../../img/logoWeather.png')center / contain no-repeat;
+   animation-name: logo;
+   animation-duration: 4s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+}
+
+@keyframes logo{
+   0%{
+      transform: rotate3d(0, 0, 0, 0deg);
+   }
+
+   100%{
+      transform: rotate3d(0, 1, 0, 360deg);
+   }
 }
 
 .header__logo-name h1{

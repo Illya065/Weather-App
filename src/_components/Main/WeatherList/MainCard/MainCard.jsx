@@ -1,6 +1,5 @@
 import React from "react";
 import WeatherImages from "../../../_common/WeatherImages/WeatherImages";
-import "./MainCard.css";
 import MainCardDay from "./MainCardDay/MainCardDay";
 
 const MainCard = (props) => {

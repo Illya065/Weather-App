@@ -160,6 +160,13 @@ body {
    .search__button {
       padding: 12px 20px;
    }
+   .card__temp {
+      font-size: 60px;
+   }
+   .card__weather {
+      margin-bottom: 30px;
+      justify-content: space-between;
+   }
 }
 
 @media(max-width: 370px) {
